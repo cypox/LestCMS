@@ -33,9 +33,14 @@
   
   <div id="topBar">
   <?php $vote = Helper::vote(); ?>
+
+  <?php if(count($vote) >= 3 ):?>
+
       <div class="v1_1"><?php echo $vote['c'][0]['pseudo'];?></div><div class="v1_2"><?php echo $vote['c'][0]['vote'];?></div>
       <div class="v2_1"><?php echo $vote['c'][1]['pseudo'];?></div><div class="v2_2"><?php echo $vote['c'][1]['vote'];?></div>
       <div class="v3_1"><?php echo $vote['c'][2]['pseudo'];?></div><div class="v3_2"><?php echo $vote['c'][2]['vote'];?></div>
+
+<?php endif;?>
 <?php if(Session::get('id')):?>
     <table id="member">
         <tr><td>» <a href="<?php echo Helper::url('account','compte');?>">Mon compte</a></td><td>» <a href="<?php echo Helper::url('account','personnages');?>">Personnages</a></td></tr>

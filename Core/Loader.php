@@ -19,7 +19,7 @@ class Loader {
         $this->loadClass('Cache', 'Core\\');
         $this->loadClass('PCache', 'Core\\');
         $this->loadClass('Model', 'Core\\mvc\\');
-        $this->loadClass('basemvc', 'Core\\mvc\\');
+       
 
 //   $this->loadClass('Controller','Core\\mvc\\');
     }
