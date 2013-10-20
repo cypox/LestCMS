@@ -165,7 +165,7 @@ class Helper {
         if (!($cache = \Core\Core::get()->_loader->_class['PCache']->get('home/vote'))) {
 
             $cache = array('c' => \Core\Core::get()->_loader->loadModel('News')->Vote());
-            \Core\Core::get()->_loader->_class['PCache']->write($cache, 'home/vote', 600);
+            \Core\Core::get()->_loader->_class['PCache']->write($cache, 'home/vote',600);
         }
         return $cache;
     }
