@@ -9,7 +9,10 @@ return array(
      * Mettez l'url exacte (y compris le http://)de votre site n'oublier pas le slach(/)
      * Par exemple http://yamisaaf.com/
      * ****************** */
+   //si tu n'as pas rewrite module dans l'hebergeure ajoute acoter de index.php n'oublier pas le slach /
     'urlSite' => 'http://localhost/lestcms/',
+   //mettez juste votre lien (sans index.php) n'oublier pas le /
+    'CSS' => 'http://localhost/lestcms/',
     'nmbvote' => 150, // Nombre de point ajouter au compte par vote
     'nmbvotevip' => 200,
     'vote' => 120, // 120 minute sa veux dire 2h si vous voulez 3h veuillez ajouter 60min donc 180
@@ -39,7 +42,7 @@ return array(
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'icore',
+        'database' => 'ancestrar_realm',
         'port' => 443, //port
         'crud' => false // si vous voulez utiliser l'orm faite true sinon mettez false (false pour le moment par encore coder)	
     ),

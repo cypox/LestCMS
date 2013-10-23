@@ -108,7 +108,9 @@ Class AccountController extends Core\mvc\Controller {
                     if (!empty($erreurs)) {
                         $this->Output->view('inscription', array('erreurs' => $erreurs));
                     } else {
-                        Helper::redirect('home', 'index');
+                        $modelAccount->CreateAccount($username,$pseudo,$password,$question,$reponse,$email);
+                    $this->Output->view('success', array('titre' => 'Inscription Réussite', 'contenu' => 'Vous étes parfaitements inscrit'));
+
                     }
                 }
             }

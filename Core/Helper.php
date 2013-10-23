@@ -65,11 +65,12 @@ class Helper {
     }
 
     public static function base() {
-        return \Core\Core::get()->config['urlSite'];
+        return \Core\Core::get()->config['CSS'];
     }
 
     public static function theme($nametheme) {
-        return self::base() . 'app/theme/' . $nametheme . '/';
+      return self::base() . 'app/theme/' . $nametheme . '/';
+
     }
 
     public static function coutvip() {
