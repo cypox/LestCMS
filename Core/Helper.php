@@ -51,17 +51,19 @@ class Helper {
     /**
      * Function pour faire un redirection
      * */
-    public function redirect($controller, $action) {
+    public static function redirect($controller, $action) {
 
 
-//header('Status: 300 Moved Permanently', false, 300);      
-        header('Location:' . self::url($controller, $action));
-        exit();
+ if (!headers_sent())
+    header('Location: ' . self::url($controller, $action));
+  else
+    echo '<script language="JavaScript">window.location=\'' . self::url($controller, $action) . '\'</script>';
+      
     }
 
-    public function rpg($url) {
+    public static  function rpg($url) {
         header('Location:' . $url);
-        exit();
+     
     }
 
     public static function base() {
@@ -181,6 +183,20 @@ class Helper {
         return $cache;
 //return \Core\Core::get()->_loader->loadModel('News')->connecter();
     }
+        public static function comptes() {
+
+
+            $cache = \Core\Core::get()->_loader->loadModel('News')->CompteNumber();
+        
+        return $cache;
+    }
+            public static function personnages() {
+
+
+            $cache = \Core\Core::get()->_loader->loadModel('News')->PersonnagesNumber();
+        
+        return $cache;
+    }
 
     public static function numcomments($id) {
         if (!($cache = \Core\Core::get()->_loader->_class['PCache']->get('home/comment/nombre/commentaires' . $id))) {
@@ -211,4 +227,5 @@ class Helper {
     }
 
 }
+
 
